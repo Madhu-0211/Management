@@ -1,0 +1,47 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark" style="background-color:#dc3545;">
+    
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a href="/home" class="nav-link" routerLink="home">Donors</a>
+      </li>
+      <li class="nav-item" *ngIf="showAdmin">
+        <a href="/donorrequest" class="nav-link" routerLink="donorrequest">DonorRequest</a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showAdmin">
+        <a href="/update-request" class="nav-link" routerLink="update-request">BloodRequest</a>
+      </li>
+      <li class="nav-item" *ngIf="showUser">
+        <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">Join us</a>
+        
+      </li>
+      <li class="nav-item" *ngIf="showUser">
+        <a href="/bloodrequest" class="nav-link" routerLink="bloodrequest">BloodRequest</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      
+      <li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

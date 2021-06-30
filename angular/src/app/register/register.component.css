@@ -1,0 +1,12 @@
+.card
+{
+    top:50px;
+    margin:auto;
+    width:50%;
+}
+.btn-danger
+{
+    border: none;
+    padding: 12px 28px;
+
+}

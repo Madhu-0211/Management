@@ -1,0 +1,89 @@
+<div class="card border-danger">
+  <h3 style="color:#dc3545; margin:auto;top:20px;"><b>Blood-Request Form</b></h3>
+  <div class="card-body">
+      
+      <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="patientname" style="color:#dc3545">Patient Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="patientname"
+            [(ngModel)]="form.patientname"
+            required
+            minlength="3"
+            maxlength="20"
+            #patientname="ngModel"
+          /></div>
+          
+          <div class="form-group">
+            <label for="date"style="color:#dc3545">Date</label>
+            <input
+              type="date"
+              class="form-control"
+              name="date"
+              [(ngModel)]="form.date"
+              required
+              #date="ngModel"
+            /></div>
+  
+        <div class="form-group">
+          <label for="reason"style="color:#dc3545">Reason</label>
+          <input
+            type="text"
+            class="form-control"
+            name="reason"
+            [(ngModel)]="form.reason"
+            required
+            #reason="ngModel"
+          /></div>
+          <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="age"style="color:#dc3545">Age</label>
+            <input
+              type="text"
+              class="form-control"
+              name="age"
+              [(ngModel)]="form.age"
+              required
+              age
+              #age="ngModel"
+            /></div>
+            
+          <div class="form-group col-md-4">
+            <label for="bloodgroup"style="color:#dc3545">Bloodgroup</label>
+            <input
+              type="text"
+              class="form-control"
+              name="bloodgroup"
+              [(ngModel)]="form.bloodgroup"
+              required
+              #bloodgroup="ngModel"
+            /></div>
+            <div class="form-group col-md-4">
+              <label for="units"style="color:#dc3545">Units</label>
+              <input
+                type="text"
+                class="form-control"
+                name="units"
+                [(ngModel)]="form.units"
+                required
+                #units="ngModel"
+              /></div></div>
+          
+        
+        <div class="form-group">
+          <button class="btn btn-danger btn-block">Submit</button>
+        </div>
+     </form>
+    </div>
+  </div>
+  <div class=req>
+  <a href="\previousrequest" class='btn btn-danger' router="previousrequest">Check you previous requests here</a>
+</div>

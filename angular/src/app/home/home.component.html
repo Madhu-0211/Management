@@ -1,0 +1,58 @@
+<div class="input-group">
+  <input #val
+    type="text"
+    class="form-control"
+    placeholder="Search by Bloodgroup"
+    [(ngModel)]="bloodgroup"
+  />
+  <div class="input-group-append">
+    <button
+      class="btn btn-danger"
+      type="button"
+      (click)="findby()"
+    >
+      Search
+    </button>
+  </div>
+  </div>
+
+
+<div class="container">  
+        <h3 style="text-align:center;color:#dc3545">Available Donors</h3></div>
+        <div class="container1">
+        <table class="table table-striped">  
+            <thead class="thead-dark">  
+                <tr>  
+                  <th>ID</th> 
+              <th>Name</th>  
+              <th>Phone Number</th> 
+              <th>Age</th> 
+              <th>Weight</th>
+              <th>Bloodgroup</th>
+              <th *ngIf="showAdmin">Manage</th>
+            
+            </tr>  
+        </thead>  
+        <tbody>
+             <tr *ngFor="let i of d">
+            
+              <td>{{ i.id }}</td>
+              <td>{{ i.name }}</td>
+              <td>{{ i.phonenumber }}</td>
+              <td>{{ i.age }}</td>
+              <td>{{ i.weight }}</td>
+              <td>{{ i.bloodgroup }}</td>
+              
+              <td class="edit" *ngIf="showAdmin">
+                
+                <button (click)=delete(i.id) class="btn btn-dark" >Delete</button>&nbsp;
+                <a href="\edit\{{i.id}}" class='btn btn-danger' router="edit">Update</a>
+              </td>
+              
+            </tr> 
+          </tbody>
+        </table>
+      
+    </div>  
+    
+    
